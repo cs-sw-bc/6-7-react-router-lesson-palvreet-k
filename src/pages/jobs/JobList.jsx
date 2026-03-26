@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 function JobList() {
   const [jobs, setJobs] = useState([])
@@ -56,9 +57,18 @@ function JobList() {
 
   return (
     <div className="jobs-list">
+      {/* Add links to part-time and full-time job listings */}
+      <>
+      <nav className='nav-links'>
+        <Link to ="/jobs/parttime" className="job-link">Part-time Jobs</Link>
+        <Link to ="/jobs/fulltime" className="job-link">Full-time Jobs</Link>
+      </nav>
+      </>
       Job searching can be a long and stressful activity. I have often heard it referred to as a full-time job in itself. This really is true! With the amount of time you take to search out opportunities, do research and target your resumes and cover letters, you’re already looking at a significant time investment. That’s not even including time for interviews. And waiting around, wondering if you’ll hear back or getting a rejection can all take its toll. Having said all that, job searching is a necessary part of life. How then can you help limit your stress and other negative feelings during this time? There are many ways.
 
 The first thing to do is to get organized. Create a schedule to fit your job search around other responsibilities. Break everything down into more manageable tasks to help reduce the feeling of being overwhelmed. Look for online job search resources that can help. It’s also important to keep records of your completed job search tasks: the job descriptions of the positions you applied for, any specific documents you send, resumes and cover letters, references, etc. This way, if you ever need to review anything, you can grab it at a moment.
+{/*Split page, display dynamic content here */}
+<Outlet />
 
 Preparation is key! Research your field to see if there are any norms you should know about, find the names of people to connect with for information and guidance. Practice answers to common interview questions. Practice any skills (such as Excel- there are many free online resources) that may help you get ahead in interviews. The more you know, the more prepared you are and the less stressed you’ll be.
 
